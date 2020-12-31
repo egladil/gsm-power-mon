@@ -28,7 +28,6 @@ SSLClient sslClient(gsmClient, TAs, (size_t) TAs_NUM, pin::misc::sslRandom);
 HttpClient httpClient(sslClient, server::host, server::port);
 IP5306 pmu(Wire);
 PermanentStorage storage;
-//Clock wallClock;
 
 void setupModemHardware() {
     // Keep reset high
@@ -283,11 +282,6 @@ bool bootDelay() {
     return true;
 }
 
-/*
-unsigned long getSSLTime() {
-    return (unsigned long) std::chrono::duration_cast<std::chrono::seconds>(wallClock.now().time_since_epoch()).count();
-}
- */
 void setup() {
     std::chrono::system_clock::time_point bootTime = std::chrono::system_clock::now();
 
@@ -304,14 +298,6 @@ void setup() {
     }
 
     storage.setup();
-
-    /*if (wallClock.init(storage.nextWakeUpTime)) {
-        SerialMonPrintTimestamp();
-        Serial.println(F("Restored clock"));
-    } else {
-
-        Serial.println(F("Could not restore clock"));
-    }*/
 
     // Initialize the indicator as an output
     pinMode(pin::misc::led, OUTPUT);
