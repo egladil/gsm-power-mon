@@ -2,7 +2,32 @@
 
 A simple voltage monitor running on an esp32 and pushing data to elasticsearch over gprs + ssl
 
-Sample serial log output:
+Sample collect log:
+```
+ets Jun  8 2016 00:22:57
+
+rst:0x5 (DEEPSLEEP_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0018,len:4
+load:0x3fff001c,len:1044
+load:0x40078000,len:8896
+load:0x40080400,len:5828
+entry 0x400806ac
+2020-12-31 16:33:00 Reset cause: ESP_RST_DEEPSLEEP
+2020-12-31 16:33:00 Wake up cause: ESP_SLEEP_WAKEUP_TIMER
+2020-12-31 16:33:00 Compile time 2020-12-31 15:22:51
+2020-12-31 16:33:00 Booting in 2
+2020-12-31 16:33:01 Booting in 1
+2020-12-31 16:33:02 Booting in 0
+2020-12-31 16:33:03 PMU percent 100
+2020-12-31 16:33:03 Voltage data 6: 100, 2672, 12.58
+2020-12-31 16:33:03 Next collect 2020-12-31 16:34:00
+2020-12-31 16:33:06 Deep sleep until 2020-12-31 16:34:00
+```
+
+Sample push log:
 ```
 2020-12-31 16:25:06 Deep sleep until 2020-12-31 16:25:52
 ets Jun  8 2016 00:22:57
