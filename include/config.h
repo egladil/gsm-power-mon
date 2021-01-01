@@ -46,8 +46,6 @@ namespace pin {
     };
 };
 
-
-// Server details
 namespace server {
     constexpr const char host[] = "net-box.djupfeldt.se";
     constexpr const int port = 8080;
@@ -57,8 +55,6 @@ namespace server {
 namespace gprs {
     constexpr const char simPIN[] = "";
     constexpr const char apn[] = "internet";
-    constexpr const char user[] = "";
-    constexpr const char password[] = "";
 };
 
 namespace data {
@@ -70,6 +66,13 @@ namespace data {
  Defined in secrets.h
 
 namespace server {
+    namespace secrets {
+        constexpr const char user[] = "";
+        constexpr const char password[] = "";
+    }
+}
+
+namespace gprs {
     namespace secrets {
         constexpr const char user[] = "";
         constexpr const char password[] = "";

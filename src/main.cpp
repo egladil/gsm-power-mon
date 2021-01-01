@@ -463,7 +463,7 @@ bool sendData() {
     serialMonPrintTimestamp();
     SerialMon.print(F("Connecting to APN: "));
     SerialMon.print(gprs::apn);
-    if (!modem.gprsConnect(gprs::apn, gprs::user, gprs::password)) {
+    if (!modem.gprsConnect(gprs::apn, gprs::secrets::user, gprs::secrets::password)) {
         SerialMon.println(F(" fail"));
         return false;
     }
